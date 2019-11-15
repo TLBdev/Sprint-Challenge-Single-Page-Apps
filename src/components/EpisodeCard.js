@@ -11,6 +11,7 @@ const StyledCard = styled.div`
     display: flex;
     align-items: center;
     justify-content: center;
+    text-align: center;
     flex-direction: column;
     img{
       width: 90%
@@ -18,15 +19,15 @@ const StyledCard = styled.div`
 `
 
 export default function CharacterCard(props) {
-  return (
+    return (
 
-    <StyledCard>
-      <h1>{props.data.name}</h1>
-      <img src={props.data.image} />
-      <h2>Species: {props.data.species}</h2>
-      <h3>Status: {props.data.status}</h3>
+        <StyledCard>
+            <h1>{props.data.name}</h1>
 
-    </StyledCard>
-  )
+            <h2>Aired: {props.data.air_date}</h2>
+            <h3>Episode: {props.data.episode}</h3>
+
+        </StyledCard>
+    )
 
 }
