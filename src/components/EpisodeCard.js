@@ -19,15 +19,15 @@ const StyledCard = styled.div`
 `
 
 export default function CharacterCard(props) {
-  return (
+    return (
 
-    <StyledCard>
-      <h1>{props.data.name}</h1>
+        <StyledCard>
+            <h1>{props.data.name}</h1>
 
-      <h2>Dimension: {props.data.dimension}</h2>
-      <h3>Type: {props.data.type}</h3>
+            <h2>Aired: {props.data.air_date}</h2>
+            <h3>Episode: {props.data.episode}</h3>
 
-    </StyledCard>
-  )
+        </StyledCard>
+    )
 
 }

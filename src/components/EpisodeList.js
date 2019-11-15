@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import axios from 'axios'
-import LocationCard from './LocationCard'
+import EpisodeCard from './EpisodeCard'
 import styled from 'styled-components'
 
 const StyledContainer = styled.div`
@@ -11,15 +11,15 @@ const StyledContainer = styled.div`
 export default function LocationsList() {
 
     // TODO: Add useState to track data from useEffect
-    const [locations, addLocations] = useState([])
+    const [episodes, addEpisodes] = useState([])
     useEffect(() => {
         // TODO: Add API Request here - must run in `useEffect`
         //  Important: verify the 2nd `useEffect` parameter: the dependancies array!
 
-        axios.get('https://rickandmortyapi.com/api/location/')
+        axios.get('https://rickandmortyapi.com/api/episode/')
             .then((response) => {
                 console.log('input', response.data.results)
-                addLocations(response.data.results)
+                addEpisodes(response.data.results)
             })
             .catch((err) => {
                 console.log(err);
@@ -30,8 +30,8 @@ export default function LocationsList() {
     return (
         <section className="character-list">
             <StyledContainer>
-                {locations.map((location) => {
-                    return <LocationCard key={location.name} data={location} />
+                {episodes.map((episode) => {
+                    return <EpisodeCard key={episode.name} data={episode} />
                 })}
             </StyledContainer>
         </section>
